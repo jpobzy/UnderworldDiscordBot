@@ -1,0 +1,6 @@
+Please enter a valid command
+Say '-addons' to get a link to download the map
+Say '-[MAPNAME]' to get a link to download the map
+Say '-ip' to see each server's ip address
+Say '-slots' to see each server's slot count
+Say '-servercommands' to see a list of commands which can be enabled in both servers
