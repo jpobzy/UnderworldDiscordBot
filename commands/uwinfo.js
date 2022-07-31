@@ -27,7 +27,6 @@ module.exports = {
             });          
             return;   
         }else{
-            message.channel.send("Use '-help' for help");
             return;
         }
     }
