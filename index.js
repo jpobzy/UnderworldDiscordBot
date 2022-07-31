@@ -28,21 +28,60 @@ const uwMaplist = "./underworldMaps/maplist.txt";
 
 
 
+
 client.on("ready", () => {
     console.log("Bot is online!")
+    // const steamServerStatus = require('steam-server-status');
+    // steamServerStatus.getServerStatus('89.163.187.47',27015, function(serverinfo){
+    //     if (serverinfo.error) {
+    //         console.log(serverinfo.error);
+    //         message.channel.send(serverinfo.error);
+    //         return;
+    //     }else{
+    //         console.log("Players: " + serverinfo.numberOfPlayers + "/" + serverinfo.maxNumberOfPlayers);
+    //     }
+    // })
 })
+
+// var serveripaddr = ""
+const ipsetup = require('./commands/validateip')
+var serveripaddr = ""
+
 
 client.on("messageCreate", (message) => {
     // console.log(message.content)
+    
+    
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ + /);
     const command = args.shift().toLowerCase();
     client.commands.get('mapcommandslist').commandslist(command,client, message, args)
-    client.commands.get('serverinfo').uwinfo(command,client, message, args, uwMaplist, fs)
+    client.commands.get('serverinfo').uwinfo(command, message, fs)
+
     if (command === "ping") {
         client.commands.get('ping').execute2(message, args);
+    }else if (command == "uw1"){
+        serveripaddr = "uw1"
+    }else if (command == "uw2"){
+        serveripaddr = "uw2"
+    }else if(serveripaddr == "uw2"){
+        client.commands.get('underworld1Serverinfo').serverinfo(command, message);
+    }else if(serveripaddr == "uw1"){
+        client.commands.get('underworld2Serverinfo').serverinfo(command, message);
+    }else{
+        message.channel.send("ERROR INDEX.JS 341")
     }
+
+
+
+
+
 })
+
+
+
+
+
 
 
 

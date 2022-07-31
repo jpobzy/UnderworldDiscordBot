@@ -1,0 +1,24 @@
+Now on Underwrold 1 setting,
+Available bot commands are:
+servername/server
+difficulty/diff
+players
+map
+
+##########################
+EXTRA COMMANDS AVAILABLE
+##########################
+gamename
+gamedir/gamedirectory
+gamengamedescriptioname/gamedesc
+applicationid/id
+numberofplayers/playernum
+maxnumberofplayers/maxplayernum
+numberofbots/botcount
+dedicatedserver/ds
+operatingsystem/os
+passwordrequired/pw
+vac/secure
+gameversion/gv
+hostname/host
+port
