@@ -8,6 +8,14 @@ Discord bot made for l4d underworld server
 4. Open terminal
 5. Put `nmp install discord.js` in terminal and hit enter
 
+## Starting up bot instructions
+1. Open the `index.js` file
+2. Open a terminal and type `node .` and hit enter
+
+<br>
+
+L4D underworld server downloadable maps and commands have already been generated and are in the file. If you wish to create your own commands/downloadable maps, please delete the files name `mapcommands.js` file and the `downloadableMaps` folder as you will now create them from scratch. To help make them, an automative script has been created and can be found in `main.py` and instuctions follow:
+
 ## Enabling bot to send L4D map download links instructions
 1. You need to upload all the maps that you want the bot to be able to send out, I created a brand new google account since multiple maps will take up a lot of storage(HIGHLY recommended you create a new google account since this will take up a lot of space, 15 GB's are given for free per account) 
 
@@ -23,8 +31,17 @@ Discord bot made for l4d underworld server
     - If you want to add a map and want a specific character to be removed and is unsure if its already being removed, go to the function `automatefixtitlefile` and look to see if the character you want to removed is in one of the `.replace(...)`
     - If you do not see it being removed type `titleversionremoved6 = titleversionremoved5.replace(<INSERT CHARACTER DESIRED TO BE REMOVED HERE>)` above the line `if count == 0:`
  3. Run the `main.py` file and wait
- 4. Once the file is being done running, a new file named 'fixtitle.py` should be created
+ 4. Once the file is being done running, a new file named `fixtitle.py` should be created
  
+
+## Creating Map Modules instructions
+1. Once `fixtitle.py` is created, uncomment `from fixtitle import *` at the top and `automatedownloadableMapsFiles()` at the bottom
+2. Comment out `automatefixtitlefile()` and run the file
+3. Once the file is done running all the downloadable maps should have a file in `../downloadableMaps`
+4. Comment out `automatedownloadableMapsFiles()`
+
+## Creating Map command instructions
+1. Uncomment `automatemapcommands()` and run the file
 
 
 
