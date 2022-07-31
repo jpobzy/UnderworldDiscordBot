@@ -12,6 +12,10 @@ Discord bot made for l4d underworld server
 1. Open the `index.js` file
 2. Open a terminal and type `node .` and hit enter
 
+## Using the bot
+- When the bot is running and is online in the discord server, enter `-help` for a list of commands
+- Map downloads can be used by entering `-<INSERT MAP NAME HERE>` 
+
 <br>
 
 L4D underworld server downloadable maps and commands have already been generated and are in the file. If you wish to create your own commands/downloadable maps, please delete the files name `mapcommands.js` file and the `downloadableMaps` folder as you will now create them from scratch. To help make them, an automative script has been created and can be found in `main.py` and instuctions follow:
