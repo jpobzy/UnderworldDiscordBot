@@ -5,8 +5,9 @@ Discord bot made for l4d underworld server
 1. Download zip folder
 2. Unzip and put folder somewhere easily accesable
 3. Open folder in an ide(preferably vscode)
-4. Open terminal
-5. Put `nmp install discord.js` in terminal and hit enter
+4. Go to the [Discord Developer Portal](https://discord.com/developers/applications) and create an application or use a previously made applications token in the `bot` section
+5. Open terminal
+6. Run `npm` install discord.js` in terminal and hit enter
 
 ## Starting up bot instructions
 1. Open the `index.js` file
