@@ -33,6 +33,11 @@ client.on("ready", () => {
     console.log("Bot is online!")
 })
 
+process.on("SIGINT", () => {
+    console.log("Bot is offline.");
+    process.exit();
+});
+
 const ipsetup = require('./commands/validateip')
 var serveripaddr = ""
 
@@ -44,23 +49,31 @@ client.on("messageCreate", (message) => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ + /);
     const command = args.shift().toLowerCase();
-    client.commands.get('mapcommandslist').commandslist(command,client, message, args)
-    client.commands.get('serverinfo').uwinfo(command, message, fs)
+    // client.commands.get('mapcommandslist').commandslist(command,client, message, args)
+    // client.commands.get('serverinfo').uwinfo(command, message, fs)
 
     if (command === "ping") {
         client.commands.get('ping').execute2(message, args);
     }else if (command == "uw1"){
-        message.content.send("On uw1 server info now")
+        message.channel.send("On uw1 server info now")
         serveripaddr = "uw1"
     }else if (command == "uw2"){
-        message.content.send("On uw2 server info now")
+        message.channel.send("On uw2 server info now")
         serveripaddr = "uw2"
     }else if(serveripaddr == "uw2"){
-        client.commands.get('underworld1Serverinfo').serverinfo(command, message);
+        // client.commands.get('serverinfo').uwinfo(command, message, fs)
+
+        // client.commands.get('underworld1Serverinfo').serverinfo(command, message);
     }else if(serveripaddr == "uw1"){
-        client.commands.get('underworld2Serverinfo').serverinfo(command, message);
+        client.commands.get('serverinfo').uwinfo(command, message, fs)
+        return;
+        // client.commands.get('underworld2Serverinfo').serverinfo(command, message);
     }else{
-       
+        fs.readFile('./helptextfiles/unknowncommand.txt', 'utf-8', (err, data) => {
+            message.channel.send(data);
+        });    
+        return;
+        // must be empty or else this conditional block will always run
     }
 })
 

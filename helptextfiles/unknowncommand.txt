@@ -1,0 +1,2 @@
+That command does not exist
+Please use ```-help``` or ```-commands``` for the commands list

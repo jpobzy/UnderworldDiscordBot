@@ -26,7 +26,16 @@ module.exports = {
                 message.channel.send(data);
             });          
             return;   
-        }else{
+        }else if (command === "commands"){
+            fs.readFile('./commands/help.txt', 'utf-8', (err, data) => {
+                message.channel.send(data);
+            });          
+            return;   
+        }
+        else{
+            fs.readFile('./helptextfiles/unknowncommand.txt', 'utf-8', (err, data) => {
+                message.channel.send(data);
+            });    
             return;
         }
     }
