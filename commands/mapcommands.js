@@ -4,243 +4,323 @@ module.exports = {
     commandslist(command, newclient, message, args){
         if (command === "deadecho") {
             newclient.commands.get('deadecho').execute(message, args);
+            return true
         }
-        if (command === "sprawlingterror") {
+        else if (command === "sprawlingterror") {
             newclient.commands.get('sprawlingterror').execute(message, args);
+            return true
         }
-        if (command === "pitstop") {
+        else if (command === "pitstop") {
             newclient.commands.get('pit_stop_fixed_v8').execute(message, args);
+            return true
         }
-        if (command === "residentevilrpd") {
+        else if (command === "residentevilrpd") {
             newclient.commands.get('residentevil_rpd').execute(message, args);
+            return true
         }
-        if (command === "heavencanwait") {
+        else if (command === "heavencanwait") {
             newclient.commands.get('heavencanwait').execute(message, args);
+            return true
         }
-        if (command === "diescreaming") {
+        else if (command === "diescreaming") {
             newclient.commands.get('die_screaming').execute(message, args);
+            return true
         }
-        if (command === "deadbeforedawn") {
+        else if (command === "deadbeforedawn") {
             newclient.commands.get('deadbeforedawn').execute(message, args);
+            return true
         }
-        if (command === "naniwa") {
+        else if (command === "naniwa") {
             newclient.commands.get('naniwa').execute(message, args);
+            return true
         }
-        if (command === "7hourslater") {
+        else if (command === "7hourslater") {
             newclient.commands.get('7_hours_later').execute(message, args);
+            return true
         }
-        if (command === "deathrow") {
+        else if (command === "deathrow") {
             newclient.commands.get('deathrow_version1.1').execute(message, args);
+            return true
         }
-        if (command === "fairfieldterror") {
+        else if (command === "fairfieldterror") {
             newclient.commands.get('fairfield_terror').execute(message, args);
+            return true
         }
-        if (command === "backtodam") {
+        else if (command === "backtodam") {
             newclient.commands.get('back_to_dam_fixed_v4').execute(message, args);
+            return true
         }
-        if (command === "viennacalling") {
+        else if (command === "viennacalling") {
             newclient.commands.get('viennacalling_1_2').execute(message, args);
+            return true
         }
-        if (command === "capemurder") {
+        else if (command === "capemurder") {
             newclient.commands.get('capemurder').execute(message, args);
+            return true
         }
-        if (command === "dietrying") {
+        else if (command === "dietrying") {
             newclient.commands.get('dietrying').execute(message, args);
+            return true
         }
-        if (command === "mallofthedead") {
+        else if (command === "mallofthedead") {
             newclient.commands.get('mallofthedead').execute(message, args);
+            return true
         }
-        if (command === "nomercyapocalypse") {
+        else if (command === "nomercyapocalypse") {
             newclient.commands.get('no mercy apocalypse').execute(message, args);
+            return true
         }
-        if (command === "nightterror") {
+        else if (command === "nightterror") {
             newclient.commands.get('nightterror').execute(message, args);
+            return true
         }
-        if (command === "projectauburn") {
+        else if (command === "projectauburn") {
             newclient.commands.get('project auburn').execute(message, args);
+            return true
         }
-        if (command === "deathstop") {
+        else if (command === "deathstop") {
             newclient.commands.get('deathstop').execute(message, args);
+            return true
         }
-        if (command === "deadstreet") {
+        else if (command === "deadstreet") {
             newclient.commands.get('deadstreet').execute(message, args);
+            return true
         }
-        if (command === "damit") {
+        else if (command === "damit") {
             newclient.commands.get('damit').execute(message, args);
+            return true
         }
-        if (command === "hellstorm") {
+        else if (command === "hellstorm") {
             newclient.commands.get('hellstorm').execute(message, args);
+            return true
         }
-        if (command === "whispersinthedark") {
+        else if (command === "whispersinthedark") {
             newclient.commands.get('whispersinthedark').execute(message, args);
+            return true
         }
-        if (command === "orangeonslaught") {
+        else if (command === "orangeonslaught") {
             newclient.commands.get('orange_onslaught').execute(message, args);
+            return true
         }
-        if (command === "precinct84") {
+        else if (command === "precinct84") {
             newclient.commands.get('precinct84').execute(message, args);
+            return true
         }
-        if (command === "blackc") {
+        else if (command === "blackc") {
             newclient.commands.get('BLACKC~1').execute(message, args);
+            return true
         }
-        if (command === "carnage") {
+        else if (command === "carnage") {
             newclient.commands.get('carnage_final').execute(message, args);
+            return true
         }
-        if (command === "ihatemountains") {
+        else if (command === "ihatemountains") {
             newclient.commands.get('ihatemountains').execute(message, args);
+            return true
         }
-        if (command === "atticaregion") {
+        else if (command === "atticaregion") {
             newclient.commands.get('attica region').execute(message, args);
+            return true
         }
-        if (command === "noesis") {
+        else if (command === "noesis") {
             newclient.commands.get('noesis').execute(message, args);
+            return true
         }
-        if (command === "deadstreet2") {
+        else if (command === "deadstreet2") {
             newclient.commands.get('dead street 2').execute(message, args);
+            return true
         }
-        if (command === "bloodysunday") {
+        else if (command === "bloodysunday") {
             newclient.commands.get('bloodysundayv3').execute(message, args);
+            return true
         }
-        if (command === "graveoutdoors") {
+        else if (command === "graveoutdoors") {
             newclient.commands.get('graveoutdoors_5.0b').execute(message, args);
+            return true
         }
-        if (command === "roadtonowhere") {
+        else if (command === "roadtonowhere") {
             newclient.commands.get('roadtonowhere').execute(message, args);
+            return true
         }
-        if (command === "redemption") {
+        else if (command === "redemption") {
             newclient.commands.get('redemption').execute(message, args);
+            return true
         }
-        if (command === "coldfear") {
+        else if (command === "coldfear") {
             newclient.commands.get('cold fear').execute(message, args);
+            return true
         }
-        if (command === "monstermill") {
+        else if (command === "monstermill") {
             newclient.commands.get('monster_mill').execute(message, args);
+            return true
         }
-        if (command === "one4nine") {
+        else if (command === "one4nine") {
             newclient.commands.get('l4d1_one4nine').execute(message, args);
+            return true
         }
-        if (command === "crashbandicootcourse") {
+        else if (command === "crashbandicootcourse") {
             newclient.commands.get('crashbandicootcourse').execute(message, args);
+            return true
         }
-        if (command === "arenaofthedead") {
+        else if (command === "arenaofthedead") {
             newclient.commands.get('arena of the dead').execute(message, args);
+            return true
         }
-        if (command === "silenthill") {
+        else if (command === "silenthill") {
             newclient.commands.get('silenthill').execute(message, args);
+            return true
         }
-        if (command === "bloodharvestapocalypse") {
+        else if (command === "bloodharvestapocalypse") {
             newclient.commands.get('blood harvest apocalypse').execute(message, args);
+            return true
         }
-        if (command === "darkblood") {
+        else if (command === "darkblood") {
             newclient.commands.get('darkblood_v2').execute(message, args);
+            return true
         }
-        if (command === "mortuarybeta1") {
+        else if (command === "mortuarybeta1") {
             newclient.commands.get('l4d_mortuarybeta1').execute(message, args);
+            return true
         }
-        if (command === "thecomplex") {
+        else if (command === "thecomplex") {
             newclient.commands.get('the_complex_final').execute(message, args);
+            return true
         }
-        if (command === "bloodwoodsapocalypse") {
+        else if (command === "bloodwoodsapocalypse") {
             newclient.commands.get('blood woods apocalypse').execute(message, args);
+            return true
         }
-        if (command === "escapefromtoronto") {
+        else if (command === "escapefromtoronto") {
             newclient.commands.get('escapefromtoronto').execute(message, args);
+            return true
         }
-        if (command === "thewoods2") {
+        else if (command === "thewoods2") {
             newclient.commands.get('the woods 2').execute(message, args);
+            return true
         }
-        if (command === "deadflagblues") {
+        else if (command === "deadflagblues") {
             newclient.commands.get('deadflagblues').execute(message, args);
+            return true
         }
-        if (command === "lastorders") {
+        else if (command === "lastorders") {
             newclient.commands.get('last_orders').execute(message, args);
+            return true
         }
-        if (command === "deadindustry") {
+        else if (command === "deadindustry") {
             newclient.commands.get('deadindustry').execute(message, args);
+            return true
         }
-        if (command === "deathtollapocalypse") {
+        else if (command === "deathtollapocalypse") {
             newclient.commands.get('death toll apocalypse').execute(message, args);
+            return true
         }
-        if (command === "youaredoomed") {
+        else if (command === "youaredoomed") {
             newclient.commands.get('you_are_doomed_v29').execute(message, args);
+            return true
         }
-        if (command === "ravenholmwar") {
+        else if (command === "ravenholmwar") {
             newclient.commands.get('l4d_ravenholmwar').execute(message, args);
+            return true
         }
-        if (command === "stargate") {
+        else if (command === "stargate") {
             newclient.commands.get('stargate').execute(message, args);
+            return true
         }
-        if (command === "live4ever") {
+        else if (command === "live4ever") {
             newclient.commands.get('live4ever').execute(message, args);
+            return true
         }
-        if (command === "deadst27.17") {
+        else if (command === "deadst27.17") {
             newclient.commands.get('deadst_27.11.17').execute(message, args);
+            return true
         }
-        if (command === "bloodorange") {
+        else if (command === "bloodorange") {
             newclient.commands.get('bloodorange').execute(message, args);
+            return true
         }
-        if (command === "thewoods") {
+        else if (command === "thewoods") {
             newclient.commands.get('the woods').execute(message, args);
+            return true
         }
-        if (command === "ilogiccity") {
+        else if (command === "ilogiccity") {
             newclient.commands.get('ilogiccity').execute(message, args);
+            return true
         }
-        if (command === "nomoreindustries") {
+        else if (command === "nomoreindustries") {
             newclient.commands.get('nomoreindustries').execute(message, args);
+            return true
         }
-        if (command === "surroundedbythedead") {
+        else if (command === "surroundedbythedead") {
             newclient.commands.get('surrounded_by_the_dead').execute(message, args);
+            return true
         }
-        if (command === "deadvacation") {
+        else if (command === "deadvacation") {
             newclient.commands.get('deadvacation').execute(message, args);
+            return true
         }
-        if (command === "city17") {
+        else if (command === "city17") {
             newclient.commands.get('city17').execute(message, args);
+            return true
         }
-        if (command === "crashcourseapocalypse") {
+        else if (command === "crashcourseapocalypse") {
             newclient.commands.get('crash course apocalypse').execute(message, args);
+            return true
         }
-        if (command === "lastorders") {
+        else if (command === "lastorders") {
             newclient.commands.get('lastorders_fixed_v5').execute(message, args);
+            return true
         }
-        if (command === "coldstream") {
+        else if (command === "coldstream") {
             newclient.commands.get('cold_stream').execute(message, args);
+            return true
         }
-        if (command === "strandead") {
+        else if (command === "strandead") {
             newclient.commands.get('strandead').execute(message, args);
+            return true
         }
-        if (command === "suicideblitz") {
+        else if (command === "suicideblitz") {
             newclient.commands.get('suicideblitz').execute(message, args);
+            return true
         }
-        if (command === "theparish") {
+        else if (command === "theparish") {
             newclient.commands.get('the_parish_fixed_04').execute(message, args);
+            return true
         }
-        if (command === "coaldblood") {
+        else if (command === "coaldblood") {
             newclient.commands.get('coaldblood').execute(message, args);
+            return true
         }
-        if (command === "thelaststand") {
+        else if (command === "thelaststand") {
             newclient.commands.get('TheLastStand').execute(message, args);
+            return true
         }
-        if (command === "pitchblackmesa") {
+        else if (command === "pitchblackmesa") {
             newclient.commands.get('pitchblackmesa').execute(message, args);
+            return true
         }
-        if (command === "deadrun") {
+        else if (command === "deadrun") {
             newclient.commands.get('dead_run').execute(message, args);
+            return true
         }
-        if (command === "blargh") {
+        else if (command === "blargh") {
             newclient.commands.get('blargh').execute(message, args);
+            return true
         }
-        if (command === "uptownghoul") {
+        else if (command === "uptownghoul") {
             newclient.commands.get('uptown_ghoul').execute(message, args);
+            return true
         }
-        if (command === "fallenbeta") {
+        else if (command === "fallenbeta") {
             newclient.commands.get('fallen_beta0.94').execute(message, args);
+            return true
         }
-        if (command === "deadontime") {
+        else if (command === "deadontime") {
             newclient.commands.get('deadontime').execute(message, args);
+            return true
         }
-        if (command === "deathaboard") {
+        else if (command === "deathaboard") {
             newclient.commands.get('deathaboard_soundfixed_10').execute(message, args);
+            return true
         }
     }
 }

@@ -1,0 +1,28 @@
+__All Available Commands__
+`-uw1` to access uw1 server information
+`-uw2` to access uw2 server information
+`-addons` to get a link to download the map
+`-[MAPNAME]` to get a link to download the map
+`-ip` to see each server's ip address
+`-slots` to see each server's slot count
+`-commands` to see all available commands
+`-server` to see which server is currently being accessed
+
+__Commands that work when bot is connected to a server__
+`-difficulty` to see the servers difficulty
+`-players` to see how many players are in the server
+`-map` to see the current map being played 
+`-gamename` to see the game name
+`-gamedir` to see the game directory
+`-gamedesc` to see the game mode
+`-id` to see the application id
+`-pnum` to see the number of players on the server
+`-maxpnum` to see the current max number of players for the server
+`-bots` to see the bot count for the server
+`-ds` to see if the server is officially dedicated or not
+`-os` to see the server hosts operating system
+`-pw` to see if the server requires a password or not
+`-vac` to see if the server is secured or not
+`-gv` to see the current game version the server is running on
+`-host` to see the hostname
+`-port` to see the port number

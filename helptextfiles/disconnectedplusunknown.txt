@@ -1,0 +1,3 @@
+That command does not exist or you trying to access a server command while not connected to a server
+Please connect to a server using `-uw1` or `-uw2`
+Please use `-help` or `-commands` for the commands list

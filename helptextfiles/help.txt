@@ -1,32 +1,8 @@
-Please enter a valid command
-Say '-addons' to get a link to download the map
-Say '-[MAPNAME]' to get a link to download the map
-Say '-ip' to see each server's ip address
-Say '-slots' to see each server's slot count
-Say '-servercommands' to see a list of commands which can be enabled in both servers
-
-
-TO GET SERVER INFORMATION IN REAL TIME ENTER EITHER "-uw1" or "-uw2"
-Available real time server commands are:
-servername/server
-difficulty/diff
-players
-map
-
-##########################
-EXTRA COMMANDS AVAILABLE
-##########################
-gamename
-gamedir/gamedirectory
-gamengamedescriptioname/gamedesc
-applicationid/id
-numberofplayers/playernum
-maxnumberofplayers/maxplayernum
-numberofbots/botcount
-dedicatedserver/ds
-operatingsystem/os
-passwordrequired/pw
-vac/secure
-gameversion/gv
-hostname/host
-port
+__General Server Commands__
+`-uw1` to access uw1 server information
+`-uw2` to access uw2 server information
+`-addons` to get a link to download the map
+`-[MAPNAME]` to get a link to download the map
+`-ip` to see each server's ip address
+`-slots` to see each server's slot count
+`-commands` to see all available commands

@@ -2,7 +2,7 @@ module.exports = {
     
     name: 'underworld2Serverinfo',
     description: "returns underworld 2 server information",
-    serverinfo(command, message){
+    serverinfo(command, message, fs){
         const steamServerStatus = require('steam-server-status');
         steamServerStatus.getServerStatus('89.163.187.47',27015, function(serverinfo){
             if (serverinfo.error) {
@@ -12,53 +12,53 @@ module.exports = {
             }else{
                 // console.log("command3 is " + command)
                 if (command === "servername" || command === "server"){
-                    message.channel.send("Server is ");
+                    message.channel.send("Server is Underworld 2");
                     return;
                 }
-                if (command === "difficulty" || command === "diff"){
-                    message.channel.send("Difficulty is: " +serverinfo.gameDescription);
+                else if (command === "difficulty" || command === "diff"){
+                    message.channel.send("Underworld 2's current difficulty is: " +serverinfo.gameDescription);
                     return;
                 }
-                if (command === "players"){
-                    message.channel.send("Players: " + serverinfo.numberOfPlayers + "/" + serverinfo.maxNumberOfPlayers);
+                else if (command === "players"){
+                    message.channel.send("Underworld 2's current players count: " + serverinfo.numberOfPlayers + "/" + serverinfo.maxNumberOfPlayers);
                     return;
                 }
-                if (command === "map"){
-                    message.channel.send("Current map is: " + serverinfo.map);
+                else if (command === "map"){
+                    message.channel.send("Underworld 2's current map is: " + serverinfo.map);
                     return;
                 } 
 
                 // EXTRA COMMANDS //////////////////////////////////////
-                if (command === "gamename"){
+                else if (command === "gamename"){
                     message.channel.send("Game name is: " + serverinfo.gameName);
                     return;
                 }               
-                if (command === "gamedir" || command === "gamedirectory"){
+                else if (command === "gamedir"){
                     message.channel.send("Game Directory is: " + serverinfo.gameDirectory);
                     return;
                 }
-                if (command === "gamengamedescriptioname" || command === "gamedesc"){
+                else if (command === "gamedesc"){
                     message.channel.send("Game description is: " + serverinfo.gameDescription);
                     return;
                 }            
 
-                if (command === "applicationid" || command === "id"){
+                else if (command === "id"){
                     message.channel.send("Application Id is: " + serverinfo.applicationId);
                     return;
                 }     
-                if (command === "numberofplayers"|| command == "playernum"){
+                else if (command === "pnum"){
                     message.channel.send("Number of players is: " + serverinfo.numberOfPlayers);
                     return;
                 }     
-                if (command === "maxnumberofplayers"|| command == "maxplayernum"){
+                else if (command == "maxpnum"){
                     message.channel.send("Max number of players is: " + serverinfo.maxNumberOfPlayers);
                     return;
                 }     
-                if (command === "numberofbots" || command === "botcount"|| command == "botnum"){
+                else if (command === "bots"){
                     message.channel.send("Bot count is: " + serverinfo.numberOfBots);
                     return;
                 }     
-                if (command === "dedicatedserver" || command === "ds"){
+                else if (command === "ds"){
                     if (serverinfo.dedicatedServer == true){
                         message.channel.send("Server is officially dedicated");
                         return;
@@ -67,7 +67,7 @@ module.exports = {
                         return;
                     }
                 }     
-                if (command === "operatingsystem" || command === "os"){
+                else if (command === "os"){
                    if (serverinfo.operatingSystem == 'l'){
                         message.channel.send("Host operating system is Linux");
                         return;
@@ -75,44 +75,50 @@ module.exports = {
                         message.channel.send("Host operating system is Windows");
                         return;
                    }else{
-                        message.channel.send("Host operating system is unknown");
+                    message.channel.send("ERROR could not get server info");
                         return;
                    }
                 }     
-                if (command === "passwordrequired" || command === "pw"){
+                else if (command === "pw"){
                     if (serverinfo.passwordRequired == false){
-                        message.channel.send("Server does not require a password");
+                        message.channel.send("Server currently does not require a password");
                         return;
                     }else if (serverinfo.passwordRequired == true){
-                        message.channel.send("Server does require a password");
+                        message.channel.send("Server currently does require a password");
                         return;
                     }else{
-                        message.channel.send("Unknown is server requires a password");
+                        message.channel.send("ERROR could not get server info");
                         return;
                     }
                 }    
-                if (command === "vac"|| command == "secure"){
+                else if (command === "vac"){
                     if (serverinfo.secure == false){
-                        message.channel.send("Server is not secured");
+                        message.channel.send("Server is currently not secured");
                         return;
                     }else if (serverinfo.secure == true){
-                        message.channel.send("Server is secured");
+                        message.channel.send("Server is currently secured");
                         return;
                     }else{
-                        message.channel.send("Unknown is server is secured");
+                        message.channel.send("ERROR could not get server info");
                         return;
                     }
                 }
-                if (command === "gameversion" || command == "gv"){
-                    message.channel.send("Current game version is: " + serverinfo.gameVersion);
+                else if (command == "gv"){
+                    message.channel.send("Server is running on game version: " + serverinfo.gameVersion);
                     return; 
                 }
-                if (command == "hostname"|| command == "host"){
-                    message.channel.send("Host name is: " + serverinfo.hostname);
+                else if (command == "host"){
+                    message.channel.send("Host number is: " + serverinfo.hostname);
                     return;
                 }
-                if (command == "port"){
-                    message.channel.send("Port name is: " + serverinfo.port);
+                else if (command == "port"){
+                    message.channel.send("Port number is: " + serverinfo.port);
+                    return;
+                }
+                else{
+                    fs.readFile('./helptextfiles/unknowncommand.txt', 'utf-8', (err, data) => {
+                        message.channel.send(data);
+                    });    
                     return;
                 }
             }

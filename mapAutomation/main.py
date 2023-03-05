@@ -20,7 +20,7 @@ def createspreadsheet():
             writefixtitle.write('       return ' + '"'+'"' + "\n")
             count = 1
         else:
-            writefixtitle.write("   if title == "+ "'")     
+            writefixtitle.write("   else if title == "+ "'")     
             writefixtitle.write(mapname + "'")
             writefixtitle.write(":\n")
             writefixtitle.write('       return ' + '"'+'"' + "\n")
@@ -101,20 +101,29 @@ def automatemapcommands():
 
 
     commands.write("    commandslist(command, newclient, message, args){\n")
+    count = 0
     for link in f.split(","):
         reqs = requests.get(link)
         soup = BeautifulSoup(reqs.text, 'html.parser')
         mapname = str(soup.find('title')).replace('.rar - Google Drive</title>','').replace('<title>','')         
         fixedmapname = fixtitle(mapname) 
-        commands.write('        if (command === "' + fixedmapname + '") {\n')
-        commands.write("            newclient.commands.get('" + mapname+ "').execute(message, args);\n")
-        commands.write("        }\n")
+        if count == 0:
+            commands.write('        if (command === "' + fixedmapname + '") {\n')
+            commands.write("            newclient.commands.get('" + mapname+ "').execute(message, args);\n")
+            commands.write("            return true\n")
+            commands.write("        }\n")
+            count += 1
+        else:
+            commands.write('        else if (command === "' + fixedmapname + '") {\n')
+            commands.write("            newclient.commands.get('" + mapname+ "').execute(message, args);\n")
+            commands.write("            return true\n")
+            commands.write("        }\n")
     commands.write("    }\n")
     commands.write("}\n")
 
 
 
-# automatemapcommands()
+automatemapcommands()
 
 #create function to automate putting map names associated with a number into maplists.txt
 def main():
@@ -131,7 +140,7 @@ def main():
         count += 1
 
 
-main()
+# main()
 
 
 #def main():

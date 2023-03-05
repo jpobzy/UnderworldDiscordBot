@@ -44,36 +44,75 @@ var serveripaddr = ""
 
 client.on("messageCreate", (message) => {
     // console.log(message.content)
-    
+
     
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ + /);
     const command = args.shift().toLowerCase();
-    // client.commands.get('mapcommandslist').commandslist(command,client, message, args)
+    const x = client.commands.get('mapcommandslist').commandslist(command,client, message, args)
+    // console.log(x);
+    if (x){return}
     // client.commands.get('serverinfo').uwinfo(command, message, fs)
 
     if (command === "ping") {
         client.commands.get('ping').execute2(message, args);
-    }else if (command == "uw1"){
-        message.channel.send("On uw1 server info now")
-        serveripaddr = "uw1"
-    }else if (command == "uw2"){
-        message.channel.send("On uw2 server info now")
-        serveripaddr = "uw2"
-    }else if(serveripaddr == "uw2"){
-        // client.commands.get('serverinfo').uwinfo(command, message, fs)
 
-        // client.commands.get('underworld1Serverinfo').serverinfo(command, message);
-    }else if(serveripaddr == "uw1"){
-        client.commands.get('serverinfo').uwinfo(command, message, fs)
-        return;
-        // client.commands.get('underworld2Serverinfo').serverinfo(command, message);
-    }else{
-        fs.readFile('./helptextfiles/unknowncommand.txt', 'utf-8', (err, data) => {
+    }else if (command == "help"){
+        fs.readFile('./helptextfiles/help.txt', 'utf-8', (err, data) => {
             message.channel.send(data);
         });    
         return;
-        // must be empty or else this conditional block will always run
+
+    }else if (command == "commands"){
+        fs.readFile('./helptextfiles/commandslist.txt', 'utf-8', (err, data) => {
+            message.channel.send(data);
+        });    
+        return;
+
+    }else if (command === "addons"){
+        fs.readFile('./underworldMaps/maplist.txt', 'utf-8', (err, data) => {
+            message.channel.send(data);
+        });
+        return;
+
+    }else if (command === "ip"){
+        message.channel.send('Underworld 1 IP address is 85.114.151.173:27015\n');  
+        message.channel.send('Underworld 2 IP address is 89.163.187.47:27015\n');  
+        return;
+
+    }else if (command === "slots"){
+        message.channel.send("Underworld 1's slots range from 6-9 slots\n");
+        message.channel.send("Underworld 2's slots range from 6-11 slots\n");
+        return;   
+
+    }else if (command == "uw1"){
+        message.channel.send("Connected to Underworld 1, please use server commands to get info about the server")
+        serveripaddr = "uw1"
+
+    }else if (command == "uw2"){
+        message.channel.send("Connected to Underworld 2, please use server commands to get info about the server")
+        serveripaddr = "uw2"
+
+    }else if(serveripaddr == "uw2"){
+        client.commands.get('underworld2Serverinfo').serverinfo(command, message, fs);
+        return;
+
+    }else if(serveripaddr == "uw1"){
+        client.commands.get('underworld1Serverinfo').serverinfo(command, message, fs);
+        return;
+
+    }else{
+        if (serveripaddr != "uw1" || serveripaddr != "uw2"){
+            fs.readFile('./helptextfiles/disconnectedplusunknown.txt', 'utf-8', (err, data) => {
+                message.channel.send(data);
+            });    
+            return;
+        }else{
+            fs.readFile('./helptextfiles/unknowncommand.txt', 'utf-8', (err, data) => {
+                message.channel.send(data);
+            });    
+            return;            
+        }
     }
 })
 
